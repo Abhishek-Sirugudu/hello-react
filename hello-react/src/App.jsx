@@ -1,14 +1,19 @@
-import './App.css'
-
+import './App.css';
+import './components/Greeting';
+import Greeting from './components/Greeting';
 function App() {
-  const name = 'Abhishek';
+  
   return (
     <>
-    <h1>Hello React</h1>
-    <p>This is my first application, built with Vite</p>
-    <p>My name is {name}</p>
+    <h1>Welcome to My app !</h1>
+    <Greeting name="Abhishek"/>
+    <Greeting name="Siva"/>
+    <Greeting name="Haseen"/>
+    <Greeting name="Hari"/>
+    
+  
     </>
   )
 }
 
-export default App
+export default App;
