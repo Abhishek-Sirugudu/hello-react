@@ -1,16 +1,25 @@
 // src/App.jsx
-import TodoList from './components/TodoList';
-import UserList from './components/UserList'; // 1. Import new component
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 import './App.css';
 
 function App() {
   return (
-    <>
-      <h1>Day 15: useEffect Hook</h1>
-      <TodoList />
-      <hr /> {/* A horizontal line to separate the components */}
-      <UserList /> {/* 2. Use new component */}
-    </>
+    <div className="App">
+      {/* 1. The Navbar is *outside* the <Routes>, so it stays on every page */}
+      <Navbar />
+
+      <div className="page-content" style={{ padding: '1rem' }}>
+        {/* 2. <Routes> is the container for all your page definitions */}
+        <Routes>
+          {/* 3. A <Route> defines a URL path and the component to render */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 
