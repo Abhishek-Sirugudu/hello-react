@@ -1,6 +1,6 @@
 // src/components/UserList.jsx
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 function UserList() {
   // 1. Create state for users and loading status
   const [users, setUsers] = useState([]);
@@ -34,13 +34,18 @@ function UserList() {
     return <p>Loading users...</p>;
   }
 
-  // 9. Once loading is false, render the list
   return (
     <div>
       <h2>User List</h2>
       <ul>
         {users.map(user => (
-          <li key={user.id}>{user.name}</li>
+          <li key={user.id}>
+            {/* 2. Wrap the user's name in a Link */}
+            {/* We use a template literal to build the dynamic URL */}
+            <Link to={`/users/${user.id}`}>
+              {user.name}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>

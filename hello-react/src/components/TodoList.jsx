@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TodoItem from "./TodoItem";
 
+
 function TodoList() {
   const [todos, settodos] = useState([ // Using 'settodos' is fine, but 'setTodos' is the convention
     { id: 1, text: "Learn React State", completed: false },
