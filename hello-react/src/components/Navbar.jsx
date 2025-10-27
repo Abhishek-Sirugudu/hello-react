@@ -1,11 +1,18 @@
 // src/components/Navbar.jsx
 import { Link } from 'react-router-dom';
+import { useContext } from 'react'; // 1. Import useContext
+import { ThemeContext } from '../contexts/ThemeContext'; // 2. Import the context
 
 function Navbar() {
+  // 3. Consume the context and get the values you need
+  const { toggleTheme } = useContext(ThemeContext);
+
   const navStyle = {
     padding: '1rem',
-    backgroundColor: '#f4f4f4',
-    borderBottom: '1px solid #ddd'
+    borderBottom: '1px solid',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   };
 
   const linkStyle = {
@@ -16,8 +23,13 @@ function Navbar() {
 
   return (
     <nav style={navStyle}>
-      <Link to="/" style={linkStyle}>Home</Link>
-      <Link to="/about" style={linkStyle}>About</Link>
+      <div>
+        <Link to="/" style={linkStyle}>Home</Link>
+        <Link to="/about" style={linkStyle}>About</Link>
+      </div>
+
+      {/* 4. Add the toggle button */}
+      <button onClick={toggleTheme}>Toggle Theme</button>
     </nav>
   );
 }

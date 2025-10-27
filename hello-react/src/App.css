@@ -40,3 +40,47 @@
 .read-the-docs {
   color: #888;
 }
+
+/* src/App.css */
+
+/* ... (any existing styles) ... */
+
+/* Light Mode (default) */
+.App.light {
+  background-color: #f9f9f9;
+  color: #333;
+  min-height: 100vh;
+}
+.App.light .page-content {
+  background-color: #fff;
+}
+.App.light nav {
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
+.App.light a {
+  color: #007bff;
+}
+
+/* Dark Mode */
+.App.dark {
+  background-color: #222;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+.App.dark .page-content {
+  background-color: #333;
+}
+.App.dark nav {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #555;
+}
+.App.dark a {
+  color: #61dafb;
+}
+.App.dark input,
+.App.dark button {
+  background-color: #444;
+  border-color: #555;
+  color: #f0f0f0;
+}
